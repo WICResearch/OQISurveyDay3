@@ -58,71 +58,36 @@ const pages = [
   },
 
   {
-    title: "Welcome and OQI Overview",
-    subtitle:
-      "OQI Purpose, Mission, Values, Agenda, and Consensus Decision-Making",
-    description: "Please rate the following statements about this session.",
-    fields: [
-      {
-        type: "scale",
-        name: "welcomePresenterClear",
-        label: "Presenter communicated clearly."
-      },
-      {
-        type: "scale",
-        name: "welcomeOrganized",
-        label: "Session was well organized."
-      },
-      {
-        type: "scale",
-        name: "welcomeGoodUseOfTime",
-        label: "Session was a good use of my time."
-      },
-      {
-        type: "scale",
-        name: "welcomeEasyToFollow",
-        label: "Session was easy to follow."
-      },
-      {
-        type: "textarea",
-        name: "welcomeSuggestions",
-        heading: "Suggestions",
-        label: "What suggestions do you have for improving this session?"
-      }
-    ]
-  },
 
    {
-  title: "Crossroads Data Entry",
-  topics: [
-    "Hemoglobin Discussion",
-    "Masimo"
-  ],
+  {
+  title: "Partnering with WIC",
+  subtitle: "Successfully Establishing WIC in Healthcare Settings",
   description: "Please rate the following statements about this session.",
   fields: [
     {
       type: "scale",
-      name: "crossroadsPresenterClear",
+      name: "partneringPresenterClear",
       label: "Presenter communicated clearly."
     },
     {
       type: "scale",
-      name: "crossroadsOrganized",
+      name: "partneringOrganized",
       label: "Session was well organized."
     },
     {
       type: "scale",
-      name: "crossroadsGoodUseOfTime",
+      name: "partneringGoodUseOfTime",
       label: "Session was a good use of my time."
     },
     {
       type: "scale",
-      name: "crossroadsEasyToFollow",
+      name: "partneringEasyToFollow",
       label: "Session was easy to follow."
     },
     {
       type: "textarea",
-      name: "crossroadsSuggestions",
+      name: "partneringSuggestions",
       heading: "Suggestions",
       label: "What suggestions do you have for improving this session?"
     }
