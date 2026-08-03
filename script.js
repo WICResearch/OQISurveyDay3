@@ -1,5 +1,6 @@
 const scriptURL =
-  "https://script.google.com/macros/s/AKfycbxQPUdevMoK0zIDym_M3rpiGCMZpH1lWLZHDg0Ykuk89tu4sEP2gSaBai3tPTnJ1V2A/exec";
+  "const scriptURL =
+  "https://script.google.com/macros/s/AKfycbzHiLOFSRQSISFcfIbhr0r8HmWUPip1auRLlJGMAUPvsMyFybBsswIT8imTYv9TA3wEPA/exec";";
 
 const scaleOptions = [
   "Strongly Disagree",
