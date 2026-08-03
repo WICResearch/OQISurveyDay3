@@ -94,32 +94,33 @@ const pages = [
   ]
 },
    {
-  title: "Hospital Liaison Round Robin",
+ {
+  title: "FY2027 Annual Planning and OQI",
   description: "Please rate the following statements about this session.",
   fields: [
     {
       type: "scale",
-      name: "hospitalLiaisonPresenterClear",
+      name: "annualPlanningPresenterClear",
       label: "Presenter communicated clearly."
     },
     {
       type: "scale",
-      name: "hospitalLiaisonOrganized",
+      name: "annualPlanningOrganized",
       label: "Session was well organized."
     },
     {
       type: "scale",
-      name: "hospitalLiaisonGoodUseOfTime",
+      name: "annualPlanningGoodUseOfTime",
       label: "Session was a good use of my time."
     },
     {
       type: "scale",
-      name: "hospitalLiaisonEasyToFollow",
+      name: "annualPlanningEasyToFollow",
       label: "Session was easy to follow."
     },
     {
       type: "textarea",
-      name: "hospitalLiaisonSuggestions",
+      name: "annualPlanningSuggestions",
       heading: "Suggestions",
       label: "What suggestions do you have for improving this session?"
     }
