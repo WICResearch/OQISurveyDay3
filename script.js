@@ -1,6 +1,5 @@
 const scriptURL =
-  "const scriptURL =
-  "https://script.google.com/macros/s/AKfycbzHiLOFSRQSISFcfIbhr0r8HmWUPip1auRLlJGMAUPvsMyFybBsswIT8imTYv9TA3wEPA/exec";";
+  "https://script.google.com/macros/s/AKfycbzHiLOFSRQSISFcfIbhr0r8HmWUPip1auRLlJGMAUPvsMyFybBsswIT8imTYv9TA3wEPA/exec";
 
 const scaleOptions = [
   "Strongly Disagree",
@@ -59,9 +58,6 @@ const pages = [
   },
 
   {
-
-   {
-  {
   title: "Partnering with WIC",
   subtitle: "Successfully Establishing WIC in Healthcare Settings",
   description: "Please rate the following statements about this session.",
@@ -94,7 +90,6 @@ const pages = [
     }
   ]
 },
-   {
  {
   title: "FY2027 Annual Planning and OQI",
   description: "Please rate the following statements about this session.",
