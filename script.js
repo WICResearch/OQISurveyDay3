@@ -123,7 +123,6 @@ const pages = [
   ]
 },
 {
-{
   title: "Round Table with the State Director",
   subtitle: "Listen, Observe, Act",
   topics: [
@@ -192,37 +191,6 @@ const pages = [
     }
   ]
 },
-  description: "Please rate the following statements about this session.",
-  fields: [
-    {
-      type: "scale",
-      name: "stateDirectorPresenterClear",
-      label: "Presenter communicated clearly."
-    },
-    {
-      type: "scale",
-      name: "stateDirectorOrganized",
-      label: "Session was well organized."
-    },
-    {
-      type: "scale",
-      name: "stateDirectorGoodUseOfTime",
-      label: "Session was a good use of my time."
-    },
-    {
-      type: "scale",
-      name: "stateDirectorEasyToFollow",
-      label: "Session was easy to follow."
-    },
-    {
-      type: "textarea",
-      name: "stateDirectorSuggestions",
-      heading: "Suggestions",
-      label: "What suggestions do you have for improving this session?"
-    }
-  ]
-},
-
   {
     title: "Overall Reflection",
     description:
