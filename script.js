@@ -123,14 +123,75 @@ const pages = [
   ]
 },
 {
+{
   title: "Round Table with the State Director",
+  subtitle: "Listen, Observe, Act",
   topics: [
-    "Future Focus of OQI",
-    "Participant Satisfaction Survey Data",
-    "OQI Meeting Cadence",
-    "Virtual vs. In-Person OQI",
-    "Local Agency Comment Period Lengths"
+    "Increasing participation through program awareness and extended partner networks",
+    "Reducing spending, materials, and processes that create barriers to service delivery",
+    "Putting the “Nutrition” back in nutrition education",
+    "Increasing breastfeeding in West Virginia",
+    "WIC online shopping pilot through Walmart",
+    "Monthly technical assistance training",
+    "WIC dashboard",
+    "Creating new partnerships",
+    "Background checks",
+    "Comment periods, office visits, and the Policy Q&A box"
   ],
+  description:
+    "Please rate the following statements about the Round Table discussion.",
+  fields: [
+    {
+      type: "scale",
+      name: "stateDirectorPrioritiesClear",
+      label:
+        "The Round Table helped me better understand the priorities and future direction of West Virginia WIC."
+    },
+    {
+      type: "scale",
+      name: "stateDirectorInitiativesUseful",
+      label:
+        "The information shared about current and upcoming state initiatives was useful to my work."
+    },
+    {
+      type: "scale",
+      name: "stateDirectorBarriersRelevant",
+      label:
+        "The discussion addressed meaningful ways to reduce barriers to WIC service delivery."
+    },
+    {
+      type: "scale",
+      name: "stateDirectorParticipationRelevant",
+      label:
+        "The discussion provided useful ideas for increasing WIC participation and strengthening partner networks."
+    },
+    {
+      type: "scale",
+      name: "stateDirectorNutritionBreastfeedingRelevant",
+      label:
+        "The discussion about nutrition education and breastfeeding priorities was relevant to the needs of West Virginia WIC."
+    },
+    {
+      type: "scale",
+      name: "stateDirectorOpportunityForFeedback",
+      label:
+        "The Round Table provided an appropriate opportunity to ask questions, share concerns, and provide feedback."
+    },
+    {
+      type: "textarea",
+      name: "stateDirectorBiggestTakeaway",
+      heading: "Round Table Reflection",
+      label:
+        "What was your most important takeaway from the Round Table with the State Director?"
+    },
+    {
+      type: "textarea",
+      name: "stateDirectorAdditionalTopics",
+      label:
+        "What topics, questions, or concerns would you like state leadership to address in the future?"
+    }
+  ]
+},
   description: "Please rate the following statements about this session.",
   fields: [
     {
