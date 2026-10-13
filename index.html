@@ -2,11 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>October 2026 WV WIC OQI Day 3 Evaluation</title>
 
@@ -15,16 +11,13 @@
 
 <body>
   <main class="container">
-
     <section id="introPage" class="intro-card">
-
       <div class="logo-row">
         <img
           src="New Dept of Health Logo_horz_RGB.jpg"
           class="logo"
           alt="West Virginia Department of Health"
         />
-
         <img
           src="WIC-Color.jpg"
           class="logo"
@@ -34,15 +27,17 @@
 
       <div class="intro-banner">
         <p class="survey-label">Office of Quality Improvement</p>
-
         <h1>October 2026 WV WIC OQI Evaluation</h1>
-
-        <p class="survey-subtitle">Day 3 Participant Feedback • Thursday, October 22, 2026</p>
+        <p class="survey-subtitle">Day 3 Participant Feedback</p>
+        <p class="survey-subtitle">
+          Thursday, October 22, 2026 · Virtual Meeting
+        </p>
       </div>
 
       <div class="intro-content">
         <p class="intro-text">
-          Thank you for participating in the October 20–22, 2026 West Virginia WIC
+          Thank you for participating in Day 3 of the
+          October 20–22, 2026 West Virginia WIC
           Office of Quality Improvement virtual meeting.
         </p>
 
@@ -54,21 +49,18 @@
 
         <p class="intro-note">
           Responses are anonymous and the evaluation should take
-          approximately 5 minutes to complete.
+          approximately 5–10 minutes to complete.
         </p>
       </div>
 
       <button type="button" id="beginSurveyBtn">
         Begin Evaluation
       </button>
-
     </section>
 
     <form id="surveyForm" style="display: none;">
-
       <div class="progress-area">
         <div class="progress-text" id="progressText"></div>
-
         <div
           class="progress-bar"
           role="progressbar"
@@ -78,31 +70,18 @@
         </div>
       </div>
 
-      <section
-        id="questionCard"
-        class="question-card"
-      ></section>
+      <section id="questionCard" class="question-card"></section>
 
       <div class="button-row">
-        <button type="button" id="backBtn">
-          Back
-        </button>
-
-        <button type="button" id="nextBtn">
-          Next
-        </button>
-
-        <button type="submit" id="submitBtn">
-          Submit Evaluation
-        </button>
+        <button type="button" id="backBtn">Back</button>
+        <button type="button" id="nextBtn">Next</button>
+        <button type="submit" id="submitBtn">Submit Evaluation</button>
       </div>
 
       <p id="message" aria-live="polite"></p>
-
     </form>
-
   </main>
 
-  <script src="script.js?v=october2026"></script>
+  <script src="script.js?v=oct2026"></script>
 </body>
 </html>
