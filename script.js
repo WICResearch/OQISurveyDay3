@@ -12,6 +12,37 @@ const scaleOptions = [
 let currentPage = 0;
 const answers = {};
 
+function sessionFields(prefix) {
+  return [
+    {
+      type: "scale",
+      name: `${prefix}PresenterClear`,
+      label: "Presenter communicated clearly."
+    },
+    {
+      type: "scale",
+      name: `${prefix}Organized`,
+      label: "Session was well organized."
+    },
+    {
+      type: "scale",
+      name: `${prefix}GoodUseOfTime`,
+      label: "Session was a good use of my time."
+    },
+    {
+      type: "scale",
+      name: `${prefix}EasyToFollow`,
+      label: "Session was easy to follow."
+    },
+    {
+      type: "textarea",
+      name: `${prefix}Suggestions`,
+      heading: "Suggestions",
+      label: "What suggestions do you have for improving this session?"
+    }
+  ];
+}
+
 const pages = [
   {
     title: "Participant Information",
@@ -56,88 +87,48 @@ const pages = [
       }
     ]
   },
-
   {
-    title: "Partnering with WIC",
-    subtitle: "Successfully Establishing WIC in Healthcare Settings",
+    title: "Dashboard Presentation",
+    subtitle: "Ashley Puffenbarger and Ali Coleman",
     description: "Please rate the following statements about this session.",
-    fields: [
-      {
-        type: "scale",
-        name: "partneringPresenterClear",
-        label: "Presenter communicated clearly."
-      },
-      {
-        type: "scale",
-        name: "partneringOrganized",
-        label: "Session was well organized."
-      },
-      {
-        type: "scale",
-        name: "partneringGoodUseOfTime",
-        label: "Session was a good use of my time."
-      },
-      {
-        type: "scale",
-        name: "partneringEasyToFollow",
-        label: "Session was easy to follow."
-      },
-      {
-        type: "textarea",
-        name: "partneringSuggestions",
-        heading: "Suggestions",
-        label: "What suggestions do you have for improving this session?"
-      }
-    ]
+    fields: sessionFields("dashboard")
   },
-
   {
-    title: "FY2027 Annual Planning and OQI",
+    title: "ABN Report Out / Redemption of New Foods Report Out",
     description: "Please rate the following statements about this session.",
-    fields: [
-      {
-        type: "scale",
-        name: "annualPlanningPresenterClear",
-        label: "Presenter communicated clearly."
-      },
-      {
-        type: "scale",
-        name: "annualPlanningOrganized",
-        label: "Session was well organized."
-      },
-      {
-        type: "scale",
-        name: "annualPlanningGoodUseOfTime",
-        label: "Session was a good use of my time."
-      },
-      {
-        type: "scale",
-        name: "annualPlanningEasyToFollow",
-        label: "Session was easy to follow."
-      },
-      {
-        type: "textarea",
-        name: "annualPlanningSuggestions",
-        heading: "Suggestions",
-        label: "What suggestions do you have for improving this session?"
-      }
-    ]
+    fields: sessionFields("abnRedemption")
   },
-
+  {
+    title: "Caseload vs. Food Package Improvement",
+    subtitle: "Ali Coleman",
+    description: "Please rate the following statements about this session.",
+    fields: sessionFields("caseloadFoodPackage")
+  },
+  {
+    title: "Feeding Challenges Document",
+    subtitle: "Chloe Sotomayor",
+    description: "Please rate the following statements about this session.",
+    fields: sessionFields("feedingChallenges")
+  },
+  {
+    title: "WIC Recipe Tool Demo",
+    subtitle: "Ali Coleman and Ashley Puffenbarger",
+    description: "Please rate the following statements about this session.",
+    fields: sessionFields("recipeTool")
+  },
   {
     title: "Round Table with the State Director",
-    subtitle: "Listen, Observe, Act",
+    subtitle: "Ashley Puffenbarger",
     topics: [
-      "Increasing participation through program awareness and extended partner networks",
-      "Reducing spending, materials, and processes that create barriers to service delivery",
-      "Putting the “Nutrition” back in nutrition education",
-      "Increasing breastfeeding in West Virginia",
-      "WIC online shopping pilot through Walmart",
-      "Monthly technical assistance training",
-      "WIC dashboard",
-      "Creating new partnerships",
-      "Background checks",
-      "Comment periods, office visits, and the Policy Q&A box"
+      "Asking the next question",
+      "Partnership Development",
+      "Homework assignment",
+      "Lily’s Place Project",
+      "WIC Recipe Tool",
+      "Expiring ARPA WIC waivers",
+      "Policy 3.09",
+      "Mid-certification scheduling",
+      "Local plans moving forward"
     ],
     description:
       "Please rate the following statements about the Round Table discussion.",
@@ -193,7 +184,6 @@ const pages = [
       }
     ]
   },
-
   {
     title: "Overall Reflection",
     description:
@@ -263,7 +253,8 @@ function renderPage() {
   progressFill.style.width =
     `${((currentPage + 1) / pages.length) * 100}%`;
 
-  backBtn.style.display = currentPage === 0 ? "none" : "inline-block";
+  backBtn.style.display =
+    currentPage === 0 ? "none" : "inline-block";
 
   nextBtn.style.display =
     currentPage === pages.length - 1 ? "none" : "inline-block";
@@ -300,7 +291,6 @@ function createField(field) {
 
   if (field.type === "select" || field.type === "scale") {
     const select = document.createElement("select");
-
     select.id = field.name;
     select.name = field.name;
     select.required = field.required !== false;
@@ -310,7 +300,6 @@ function createField(field) {
     defaultOption.textContent = "Select one";
     defaultOption.disabled = true;
     defaultOption.selected = true;
-
     select.appendChild(defaultOption);
 
     const options =
@@ -332,26 +321,22 @@ function createField(field) {
 
   if (field.type === "text") {
     const input = document.createElement("input");
-
     input.type = "text";
     input.id = field.name;
     input.name = field.name;
     input.value = answers[field.name] || "";
     input.required = field.required === true;
-
     wrapper.appendChild(input);
   }
 
   if (field.type === "textarea") {
     const textarea = document.createElement("textarea");
-
     textarea.id = field.name;
     textarea.name = field.name;
     textarea.rows = 5;
     textarea.value = answers[field.name] || "";
     textarea.required = field.required === true;
     textarea.placeholder = "Enter your response here...";
-
     wrapper.appendChild(textarea);
   }
 
@@ -359,13 +344,11 @@ function createField(field) {
 }
 
 function saveCurrentPage() {
-  const fields = questionCard.querySelectorAll(
-    "input, select, textarea"
-  );
-
-  fields.forEach((field) => {
-    answers[field.name] = field.value.trim();
-  });
+  questionCard
+    .querySelectorAll("input, select, textarea")
+    .forEach((field) => {
+      answers[field.name] = field.value.trim();
+    });
 }
 
 function validateCurrentPage() {
@@ -391,22 +374,14 @@ nextBtn.addEventListener("click", () => {
   saveCurrentPage();
   currentPage++;
   renderPage();
-
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
+  window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
 backBtn.addEventListener("click", () => {
   saveCurrentPage();
   currentPage--;
   renderPage();
-
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
+  window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
 document
@@ -419,7 +394,6 @@ document
     }
 
     saveCurrentPage();
-
     message.textContent = "Submitting your response...";
     submitBtn.disabled = true;
 
@@ -432,11 +406,11 @@ document
         document.getElementById("surveyForm").innerHTML = `
           <div class="thank-you-card">
             <div class="thank-you-icon">✓</div>
-
             <h1>Thank You!</h1>
 
             <p class="thank-you-lead">
-              Thank you for completing the October 22, 2026 WV WIC OQI Day 3 Evaluation.
+              Thank you for completing the October 22, 2026
+              WV WIC OQI Day 3 Evaluation.
             </p>
 
             <p>
@@ -456,17 +430,13 @@ document
           </div>
         `;
 
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth"
-        });
+        window.scrollTo({ top: 0, behavior: "smooth" });
       })
       .catch((error) => {
         message.textContent =
           "There was an error submitting the survey. Please try again.";
 
         submitBtn.disabled = false;
-
         console.error("Submission error:", error);
       });
   });
@@ -479,9 +449,5 @@ document
 
     currentPage = 0;
     renderPage();
-
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
