@@ -1,5 +1,5 @@
 const scriptURL =
-  "https://script.google.com/macros/s/AKfycbzHiLOFSRQSISFcfIbhr0r8HmWUPip1auRLlJGMAUPvsMyFybBsswIT8imTYv9TA3wEPA/exec";
+  "https://script.google.com/macros/s/AKfycbysZQvTcgZDAxZZ2VBZW1wIxbcmQy6Jdf9-tAPiBm-e9dpks-dKRPVk3P32vfS2mnDe4g/exec";
 
 const scaleOptions = [
   "Strongly Disagree",
@@ -94,95 +94,39 @@ const pages = [
     fields: sessionFields("dashboard")
   },
   {
-    title: "ABN Report Out / Redemption of New Foods Report Out",
+    title: "ABN Report Out / Redemption of New Foods",
+    subtitle: "Kara Napier",
     description: "Please rate the following statements about this session.",
-    fields: sessionFields("abnRedemption")
+    fields: sessionFields("abn")
   },
   {
     title: "Caseload vs. Food Package Improvement",
     subtitle: "Ali Coleman",
     description: "Please rate the following statements about this session.",
-    fields: sessionFields("caseloadFoodPackage")
+    fields: sessionFields("caseload")
   },
   {
     title: "Feeding Challenges Document",
     subtitle: "Chloe Sotomayor",
     description: "Please rate the following statements about this session.",
-    fields: sessionFields("feedingChallenges")
-  },
-  {
-    title: "WIC Recipe Tool Demo",
-    subtitle: "Ali Coleman and Ashley Puffenbarger",
-    description: "Please rate the following statements about this session.",
-    fields: sessionFields("recipeTool")
+    fields: sessionFields("feeding")
   },
   {
     title: "Round Table with the State Director",
     subtitle: "Ashley Puffenbarger",
     topics: [
       "Asking the next question",
-      "Partnership Development",
-      "Homework assignment",
+      "Hosting events at WIC clinics",
+      "Partnership Development and homework assignment",
       "Lily’s Place Project",
-      "WIC Recipe Tool",
+      "WIC Recipe Tool demo — Ali Coleman and Ashley Puffenbarger",
       "Expiring ARPA WIC waivers",
       "Policy 3.09",
       "Mid-certification scheduling",
       "Local plans moving forward"
     ],
-    description:
-      "Please rate the following statements about the Round Table discussion.",
-    fields: [
-      {
-        type: "scale",
-        name: "stateDirectorPrioritiesClear",
-        label:
-          "The Round Table helped me better understand the priorities and future direction of West Virginia WIC."
-      },
-      {
-        type: "scale",
-        name: "stateDirectorInitiativesUseful",
-        label:
-          "The information shared about current and upcoming state initiatives was useful to my work."
-      },
-      {
-        type: "scale",
-        name: "stateDirectorBarriersRelevant",
-        label:
-          "The discussion addressed meaningful ways to reduce barriers to WIC service delivery."
-      },
-      {
-        type: "scale",
-        name: "stateDirectorParticipationRelevant",
-        label:
-          "The discussion provided useful ideas for increasing WIC participation and strengthening partner networks."
-      },
-      {
-        type: "scale",
-        name: "stateDirectorNutritionBreastfeedingRelevant",
-        label:
-          "The discussion about nutrition education and breastfeeding priorities was relevant to the needs of West Virginia WIC."
-      },
-      {
-        type: "scale",
-        name: "stateDirectorOpportunityForFeedback",
-        label:
-          "The Round Table provided an appropriate opportunity to ask questions, share concerns, and provide feedback."
-      },
-      {
-        type: "textarea",
-        name: "stateDirectorBiggestTakeaway",
-        heading: "Round Table Reflection",
-        label:
-          "What was your most important takeaway from the Round Table with the State Director?"
-      },
-      {
-        type: "textarea",
-        name: "stateDirectorAdditionalTopics",
-        label:
-          "What topics, questions, or concerns would you like state leadership to address in the future?"
-      }
-    ]
+    description: "Please rate the following statements about this discussion.",
+    fields: sessionFields("roundTable")
   },
   {
     title: "Overall Reflection",
